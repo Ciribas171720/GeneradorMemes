@@ -1,0 +1,260 @@
+
+:root {
+    --main-background-color: white;
+    --aside-background-color: rgb(209, 167, 209);
+    --nav-background-color: rgb(197, 145, 197);
+  
+    
+  }
+  
+  .dark-theme {
+    --main-background-color: gray;
+    --aside-background-color: lightgray;
+    --nav-background-color: rgb(45, 45, 45);
+    --input-text-background: darkgray;
+  }
+  
+  input[type=text] {
+    background-color: var(--input-text-background);
+    border: 1px solid black;
+  }
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-color: var(--main-background-color);
+  }
+  
+  .barranav {
+    background-color: var(--nav-background-color);
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .links-div {
+    display: flex;
+    column-gap: 1vw;
+  }
+  
+  .link {
+    font-size: 2vh;
+    font-family: "Roboto", system-ui;
+    color: white;
+  }
+  
+  .link:visited {
+    color: rgb(255, 252, 252);
+  }
+  
+  .titulo {
+    font-size: 5vh;
+    font-family: "Roboto", system-ui;
+    color: white;
+  }
+  
+  .principal-container {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    height: 90vh;
+  }
+  
+  .principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1vh;
+    margin-top: 15vh;
+    width: 100%;
+  }
+  
+  .imageAndTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 500px;
+    height: auto;
+  }
+  
+  .imageContainer {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+  }
+  
+  .texto {
+    padding: 1rem;
+    word-break: break-all;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .texto:first-child {
+    border-bottom: 1px solid black;
+  }
+  
+  .texto:nth-child(3) {
+    border-top: 1px solid black;
+  }
+  
+  .boton {
+    padding: 0.5rem;
+  }
+  
+  .seleccion {
+    background-color: var(--aside-background-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2rem;
+    row-gap: 1vh;
+    height: 100%;
+    position: fixed;
+    top: 10vh;
+  }
+  
+  .seleccion.imagenSeleccion {
+    display: none;
+  }
+  
+  .seleccion.textoSeleccion {
+    padding: 1.75rem;
+    row-gap: 2vh;
+  }
+  
+  .seleccion-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text-seleccion {
+    font-size: 0.75rem;
+  }
+  
+  .texto-other {
+    font-size: 0.85rem;
+    font-weight: 550;
+  }
+  
+  .fondo {
+    width: 100%;
+  }
+  
+  .fondo.contenedor {
+    display: flex;
+    align-items: center;
+    column-gap: 1.5vw;
+  }
+  
+  .colorcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5vw;
+  }
+  
+  .colorcontainer.colortexto {
+    justify-content: start;
+  }
+  
+  .selectimagen {
+    padding: 0.25rem;
+    flex-grow: 1;
+  }
+  
+  .selecttexto {
+    padding: 0.25rem;
+    margin-top: 0.25rem;
+  }
+  
+  .slider {
+    width: 100%;
+  }
+  
+  .check {
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+  }
+  
+  .font-size-input {
+    width: 35px;
+    padding: 0.25rem;
+    margin: 0 0.25rem 0.25rem 0;
+  }
+  
+  .align-buttons-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    column-gap: 0.25rem;
+  }
+  
+  .align-buttons {
+    padding: 0.1rem;
+  }
+  
+  .botones-contorno {
+    padding: 0.25rem;
+    margin: 0.25rem 0.25rem 0.25rem 0.25rem;
+  }
+  
+  .botones-contorno:first-child {
+    margin-left: 0;
+  }
+  
+  .inputtexto {
+    padding: 0.25rem;
+  }
+  
+  @media (max-width: 1024px) {
+    .principal-container {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .seleccion {
+      width: 100%;
+      align-items: center;
+      position: static;
+    }
+  
+    .slider {
+      width: 50%;
+      text-align: center;
+    }
+  
+    .select {
+      flex-grow: 0;
+    }
+  
+    .fondo {
+      text-align: center;
+    }
+  
+    .principal {
+      padding-bottom: 2.5rem;
+    }
+  
+    .texto-other {
+      text-align: center;
+    }
+  
+    .fondo.contenedor {
+      justify-content: center;
+    }
+  }
+  
