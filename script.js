@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
                document.getElementById("imageContainer").style.width = 500.0 / (imagen.height / imagen.width);
             }
           }
+          document.getElementById("imageContainer").style.backgroundSize = document.getElementById("imageContainer").style.width + " " + document.getElementById("imageContainer").style.height;
           document.getElementById("imageAndTextContainer").style.width = "fit-content";
           document.getElementById("imageAndTextContainer").style.height = "fit-content";
           document.getElementById("divtextosuperior").style.maxWidth = document.getElementById("imageContainer").style.width;
@@ -50,7 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.getElementById("generar").addEventListener("click", function() {
-      cargar(document.getElementById("url").value).then(() => document.getElementById("imageContainer").style.backgroundImage = "url('" + document.getElementById("url").value + "')");
+      cargar(document.getElementById("url").value).then(() => {
+        document.getElementById("imageContainer").style.backgroundImage = "url('" + document.getElementById("url").value + "')";
+        downloadMeme();
+      });
       document.getElementById("textosuperior").innerHTML = document.getElementById("mensajesuperior").value;
       document.getElementById("textoinferior").innerHTML = document.getElementById("mensajeinferior").value;
   });
@@ -58,16 +62,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-document.getElementById("generar").addEventListener("click", function() {
-  cargar(document.getElementById("url").value).then(() => {
-    document.getElementById("imageContainer").style.backgroundImage = "url('" + document.getElementById("url").value + "')";
-    return new Promise(resolve => setTimeout(resolve, 500)); // Add a delay to ensure the image is loaded
-  }).then(() => {
-    document.getElementById("textosuperior").innerHTML = document.getElementById("mensajesuperior").value;
-    document.getElementById("textoinferior").innerHTML = document.getElementById("mensajeinferior").value;
-    downloadMeme(); 
-  });
-});
+// document.getElementById("generar").addEventListener("click", function() {
+//   cargar(document.getElementById("url").value).then(() => {
+//     document.getElementById("imageContainer").style.backgroundImage = "url('" + document.getElementById("url").value + "')";
+//     return new Promise(resolve => setTimeout(resolve, 500)); // Add a delay to ensure the image is loaded
+//   }).then(() => {
+//     document.getElementById("textosuperior").innerHTML = document.getElementById("mensajesuperior").value;
+//     document.getElementById("textoinferior").innerHTML = document.getElementById("mensajeinferior").value;
+//     downloadMeme(); 
+//   });
+// });
 
 
   function filters(filter, value, add) {
@@ -258,7 +262,9 @@ function downloadMeme(){
 
   var memeResult= document.getElementById("memeResult");
   
-  html2canvas(memeResult).then(function(canvas) {
+  html2canvas(memeResult, {
+    proxy: "https://corsproxy.io/"
+  }).then(function(canvas) {
   
   var image= canvas.toDataURL("image/jpeg");
   
