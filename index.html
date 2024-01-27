@@ -1,0 +1,83 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+<!-- <script src="FileSaver.js"></script> -->
+<script src= "https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<nav class="barranav">
+  <p class="titulo">Generador de Memes</p>
+  <div class="links-div">
+    <a href="#Imagen" id="imagenLink" class="link">Imagen</a>
+    <a href="#Texto" id="textoLink" class="link">Texto</a>
+    <a href="#Change" id="changeLink" class="link">Modo oscuro</a>
+  </div>
+</nav>
+<main class="principal-container">
+  
+<section class="principal">
+
+  <div id="memeResult">
+  <div class="imageAndTextContainer" id="imageAndTextContainer">
+    <div class="texto" id="divtextosuperior"><p id="textosuperior">¡Texto!</p></div>
+    <div class="imageContainer" id="imageContainer"></div>
+    <div class="texto" id="divtextoinferior"><p id="textoinferior">¡Texto!</p></div>
+  </div>
+</div>
+  <button class="boton" id="generar">Descargar meme</button>
+
+
+</section>
+
+<aside id="seleccionImagen" class="seleccion imagenSeleccion">
+  <h2 class="seleccion-title">IMAGEN</h2>
+  <div><p class="texto-other">URL</p><input id="url" type="text" class="inputtexto"></input></div>
+  <div class="fondo"><p class="texto-other">FONDO</p><div class="colorcontainer"><input id="colorFondo" type="color"></input><select class="selectimagen" id="selectimagen"><option value="unset">Ninguno</option><option value="lighten">Aclarar</option><option value="difference">Diferencia</option><option value="darken">Oscurecer</option><option value="luminosity">Luminosidad</option><option value="multiply">Multiplicar</option></select></div></div>
+  <div><p class="texto-other">FILTROS</p></div>
+  <div class="slider"><p class="text-seleccion">BRILLO</p><input class="slider" id="brillo" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">OPACIDAD</p><input class="slider" id="opacidad" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">CONTRASTE</p><input class="slider" id="contraste" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">DESENFOQUE</p><input class="slider" id="desenfoque" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">ESCALA DE GRISES</p><input class="slider" id="escalagrises" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">SEPIA</p><input class="slider" id="sepia" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">HUE</p><input class="slider" id="hue" type="range" min="0" max="180" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">SATURADO</p><input class="slider" id="saturado" type="range" min="0" max="100" value="0"></input></div>
+  <div class="slider"><p class="text-seleccion">NEGATIVO</p><input class="slider" id="negativo" type="range" min="0" max="100" value="0"></input></div>
+  <button id="restablecer" class="boton">Restablecer filtros</button>
+</aside>
+
+<aside id="seleccionTexto" class="seleccion textoSeleccion">
+  <h2 class="seleccion-title">TEXTO</h2>
+  <div><p class="texto-other">MENSAJE SUPERIOR</p><input id="mensajesuperior" type="text" class="inputtexto"></input></div>
+  <div><input type="checkbox" class="check" id="checksuperior"><label>Sin mensaje superior</label></input></div>
+  <div><p class="texto-other">MENSAJE INFERIOR</p><input id="mensajeinferior" type="text" class="inputtexto"></input></div>
+  <div><input type="checkbox" class="check" id="checkinferior"><label>Sin mensaje superior</label></input></div>
+  <div><p class="texto-other">FUENTE</p>
+    <select class="selecttexto" id="selecttexto">
+      <option value="Ninguno">Ninguno</option>
+      <option value="Arial">Arial</option>
+      <option value="Comic Sans MS">Comic Sans MS</option>
+      <option value="Times New Roman">Times New Roman</option>
+    </select>
+  </div>
+  <div class="align-buttons-container"><input type="text" class="font-size-input"></input><button class="align-buttons" id="align-left"><img src="align-left.svg" width="20px"></img></button><button class="align-buttons" id="align-center"><img src="align-center.svg" width="20px"></img></button><button class="align-buttons" id="align-right"><img src="align-right.svg" width="20px"></img></button></div>
+  <div class="fondo contenedor">
+    <div>
+      <p class="texto-other">COLOR</p><input id="colorTexto" type="color"></input>
+    </div>
+    <div>
+      <p class="texto-other">FONDO</p><input id="colorFondoTexto" type="color"></input>
+    </div></div>
+    <div><input type="checkbox" class="check" id="checktransparente"><label>Fondo transparente</label></input></div>
+  </div>
+  <div><p class="texto-other">CONTORNO</p>
+    <div><button class="botones-contorno" id="boton-ninguno">Ninguno</button><button class="botones-contorno" id="boton-claro">Claro</button><button class="botones-contorno" id="boton-oscuro">Oscuro</button></div>
+  </div>
+  <div><p class="texto-other">ESPACIADO</p><input type="text" class="inputtexto" id="espaciado"></input></div>
+  <div><p class="texto-other">INTERLINEADO</p><input type="text" class="inputtexto" id="interlineado"></input></div>
+</aside>
+</main>
+</body>
+</html>
