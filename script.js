@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function filters(filter, value, add) {
     let filtros = document.getElementById("imageContainer").style.filter;
-    console.log(filtros);
+    //console.log(filtros);
     if (filtros.includes(filter)) {
 	let p = filtros.indexOf(filter + "(");
         let pp = filtros.indexOf(")", p);
@@ -265,9 +265,15 @@ function downloadMeme(){
   html2canvas(memeResult, {
     proxy: "https://corsproxy.io/"
   }).then(function(canvas) {
-  
-  var image= canvas.toDataURL("image/jpeg");
-  
+
+    let c = document.createElement("canvas");
+    c.width = canvas.width;
+    c.height = canvas.height;
+    let cc = c.getContext("2d");
+    cc.filter = document.getElementById("imageContainer").style.filter;
+    cc.drawImage(canvas, 0, 0);
+    
+  var image= c.toDataURL("image/jpg"); 
   
   var downloadLink=document.createElement("a");
   downloadLink.href=image;
